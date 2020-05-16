@@ -65,7 +65,7 @@ helpers.log(`--------------------------------------`)
 
 allFiles.forEach((orig) => {
     const destFileName = orig.slice(rootdir.length).split(path.sep).filter(Boolean).join("-")
-    const dest = path.resolve(outputdir, destFileName)
+    const dest = path.resolve(outputdir, destFileName).split(" ").join("-")
     helpers.log(`${orig} -> ${dest}`)
     fs.copySync(orig, dest, { overwrite: true, dereference: true })
 })

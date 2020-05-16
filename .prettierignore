@@ -1,0 +1,14 @@
+/node_modules
+/public
+/scripts
+/build
+
+node_modules
+public
+scripts
+build
+
+/node_modules/*
+/public/*
+/scripts/*
+/build/*

@@ -1,4 +1,4 @@
-### Flatten Dir
+### Flatten Directory
 
 Copies every file in a directory recursively to a target directory.
 Renames every file to start with a prefix of the directories walked to avoid naming collisions.
@@ -6,18 +6,18 @@ Directories are relative to the `cwd` or current working directory.
 
 #### Install
 ```
-npm i -g flatten-dir
+npm i -g flatten-directory
 ```
 
 #### Usage without args
 ```
-flatten-dir
+flatten-directory
 ```
-Will use `cwd` as the root directory and will copy every file into a new directory `flatten-dir`
+Will use `cwd` as the root directory and will copy every file into a new directory `flatten-directory`
 
 #### Usage with args. Every arg is optional.
 ```
-flatten-dir --rootdir="downloads" --outputdir="downloadsflattened"
+flatten-directory --rootdir="downloads" --outputdir="downloadsflattened"
 ```
 The `rootdir` will be interpreted as `cwd/rootdir`. In this case `cwd/downloads`
 The `outputdir` will be interpreted as `cwd/outputdir`. In this case, `cwd/downloadsflattened`

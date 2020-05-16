@@ -1,5 +1,5 @@
 {
-  "name": "flatten-dir",
+  "name": "flatten-directory",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -7,12 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index"
   },
-  "author": "Shahan Kazi",
+  "author": "vvolfster",
   "license": "ISC",
   "dependencies": {
-    "@20i/scripts": "^1.0.44"
+    "fs-extra": "^9.0.0",
+    "lodash": "^4.17.15"
   },
   "bin": {
-    "flatten-dir": "dist/index.js"
+    "flatten-directory": "dist/index.js"
   }
 }

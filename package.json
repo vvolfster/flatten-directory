@@ -1,0 +1,18 @@
+{
+  "name": "flattendir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index"
+  },
+  "author": "Shahan Kazi",
+  "license": "ISC",
+  "dependencies": {
+    "@20i/scripts": "^1.0.44"
+  },
+  "bin": {
+    "flatten-dir": "dist/index.js"
+  }
+}

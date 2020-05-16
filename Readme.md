@@ -13,7 +13,7 @@ npm i -g flatten-directory
 ```
 flatten-directory
 ```
-Will use `cwd` as the root directory and will copy every file into a new directory `flatten-directory`
+Will use `cwd` as the root directory and will copy every file into a new directory `flatten-directory-output`
 
 #### Usage with args. Every arg is optional.
 ```

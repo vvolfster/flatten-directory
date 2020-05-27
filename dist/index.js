@@ -52,6 +52,12 @@ const helpers = {
     },
     move(oldPath, newPath) {
         try {
+            // create dir if not exist
+            const dir = newPath.split(path.sep).filter(Boolean).slice(0, -1).join(path.sep)
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir)
+            }
+
             fs.renameSync(oldPath, newPath)
         } catch (e) {
             if (e.code === "EXDEV") {

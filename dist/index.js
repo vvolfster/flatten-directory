@@ -49,13 +49,26 @@ const helpers = {
     log(...args) {
         const name = `${packageJson.name} (${packageJson.version}) `
         console.log(name, ...args)
-    }
+    },
+    move(oldPath, newPath) {
+        try {
+            fs.renameSync(oldPath, newPath)
+        } catch (e) {
+            if (e.code === "EXDEV") {
+                fs.copySync(oldPath, newPath, { overwrite: true, dereference: true })
+                fs.unlinkSync(oldPath)
+            } else {
+                throw e
+            }
+        }
+    },
 }
 
 const envVars = helpers.getEnvVars()
 
 const rootdir = envVars.rootdir ? path.resolve(process.cwd(), envVars.rootdir) : process.cwd()
 const outputdir = path.resolve(process.cwd(), envVars.outputdir || "flatten-directory-output")
+const copy = !envVars.cut
 
 const allFiles = helpers.filesInDirectory(rootdir, true)
 
@@ -67,7 +80,11 @@ allFiles.forEach((orig) => {
     const destFileName = orig.slice(rootdir.length).split(path.sep).filter(Boolean).join("-").split(" ").join("-")
     const dest = path.resolve(outputdir, destFileName)
     helpers.log(`${orig} -> ${dest}`)
-    fs.copySync(orig, dest, { overwrite: true, dereference: true })
+    if (copy) {
+        fs.copySync(orig, dest, { overwrite: true, dereference: true })
+    } else {
+        helpers.move(orig, dest)
+    }
 })
 
 helpers.log(`--------------------------------------`)

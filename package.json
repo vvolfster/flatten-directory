@@ -1,15 +1,15 @@
 {
-  "name": "flatten-directory",
-  "version": "1.0.4",
-  "description": "Copies every file in a directory recursively to a target directory",
-  "main": "./dist/index.js",
-  "author": "vvolfster",
-  "license": "MIT",
-  "dependencies": {
-    "fs-extra": "^9.0.0",
-    "lodash": "^4.17.15"
-  },
-  "bin": {
-    "flatten-directory": "./dist/index.js"
-  }
+    "name": "flatten-directory",
+    "version": "1.0.6",
+    "description": "Copies or moves every file in a directory recursively to a target directory",
+    "main": "./dist/index.js",
+    "author": "vvolfster",
+    "license": "MIT",
+    "dependencies": {
+        "fs-extra": "^9.0.0",
+        "lodash": "^4.17.15"
+    },
+    "bin": {
+        "flatten-directory": "./dist/index.js"
+    }
 }

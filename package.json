@@ -1,6 +1,6 @@
 {
     "name": "flatten-directory",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Copies or moves every file in a directory recursively to a target directory",
     "main": "./dist/index.js",
     "author": "vvolfster",
